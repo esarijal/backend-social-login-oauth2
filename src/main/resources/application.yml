@@ -5,10 +5,11 @@ spring:
     password: password
   jpa:
     show-sql: true
-    hibernate: ddl-update
+    hibernate:
+      ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
+        dialect: org.hibernate.dialect.MariaDBDialect
   security:
     oauth2:
       client:

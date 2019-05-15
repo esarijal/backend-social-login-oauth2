@@ -16,18 +16,20 @@ import java.util.List;
 import java.util.Map;
 
 @Getter
-@RequiredArgsConstructor
 public class UserPrincipal implements OAuth2User, UserDetails {
-    @NonNull
     private Long id;
-    @NonNull
     private String email;
-    @NonNull
     private String password;
-    @NonNull
     private Collection<? extends GrantedAuthority> authorities;
     @Setter
     private Map<String, Object> attributes;
+
+    public UserPrincipal(Long id, String email, String password, Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+        this.authorities = authorities;
+    }
 
     public static UserPrincipal create(User user){
         List<SimpleGrantedAuthority> authorities =

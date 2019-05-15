@@ -1,7 +1,6 @@
 package com.erm.sociallogin.demo.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -10,7 +9,6 @@ import javax.validation.constraints.NotNull;
 
 @Entity
 @Data
-@Builder
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
