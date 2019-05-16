@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:mariadb://localhost:3307/spring-social
-    username: root
+    url: jdbc:postgresql://localhost:5432/social-spring
+    username: postgres
     password: password
   jpa:
     show-sql: true
@@ -9,7 +9,11 @@ spring:
       ddl-auto: update
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MariaDBDialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+
   security:
     oauth2:
       client:
